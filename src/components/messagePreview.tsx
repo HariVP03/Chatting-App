@@ -10,10 +10,8 @@ const MessagePreview: React.FC<{
   return (
     <Flex
       cursor="pointer"
-      bg="gray.300"
+      bg="#90e0ef"
       direction="column"
-      border="1px solid"
-      borderColor="gray.300"
       w="98%"
       my={1}
       minH="100px"
@@ -21,14 +19,20 @@ const MessagePreview: React.FC<{
       p={2}
       rounded="lg"
       overflowY="hidden"
-      _hover={{ borderColor: "gray.400", shadow: "md" }}
+      transition="background 0.2s"
+      _hover={{ bg: "#89c2d9" }}
     >
       <Flex>
         <Avatar mr={3} src={senderAvatar} />
         <Flex direction="column" ml={1}>
-          <chakra.h4 mb={0}>
+          <chakra.h4 mb={0} fontFamily="'Karla', sans-serif;">
             {senderName}
-            <Text fontWeight="normal" color="gray.500" mb={1}>
+            <Text
+              fontFamily="'Karla', sans-serif;"
+              fontWeight="normal"
+              color="gray.700"
+              mb={1}
+            >
               {"an hour ago"}
             </Text>
           </chakra.h4>

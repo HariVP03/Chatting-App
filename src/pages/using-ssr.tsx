@@ -1,13 +1,12 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../components/layout";
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-
-const UsingSSR = ({ serverData }) => {
+const UsingSSR: React.FC<{ serverData: { message?: string } }> = ({
+  serverData,
+}) => {
   return (
     <Layout>
-      <Seo title="Using SSR" />
       <h1>SSR page</h1>
       <img
         style={{ width: "300px" }}
@@ -24,25 +23,25 @@ const UsingSSR = ({ serverData }) => {
       </p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
-  )
-}
+  );
+};
 
-export default UsingSSR
+export default UsingSSR;
 
 export async function getServerData() {
   try {
-    const res = await fetch(`https://dog.ceo/api/breeds/image/random`)
+    const res = await fetch(`https://dog.ceo/api/breeds/image/random`);
     if (!res.ok) {
-      throw new Error(`Response failed`)
+      throw new Error(`Response failed`);
     }
     return {
       props: await res.json(),
-    }
+    };
   } catch (error) {
     return {
       status: 500,
       headers: {},
       props: {},
-    }
+    };
   }
 }

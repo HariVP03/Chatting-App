@@ -1,11 +1,12 @@
 import React from "react";
 import { Flex, chakra, Input } from "@chakra-ui/react";
 import MessagePreview from "../components/messagePreview";
+import ChatBox from "../components/chatBox";
 
 const ChatRoom = () => {
   // TODO: FIX FONTS
   return (
-    <Flex justify="center" align="center" minH="100vh" w="100vw" bg="gray.800">
+    <Flex justify="center" align="center" h="100vh" w="100vw" bg="gray.800">
       <Flex minW="95vw" h="95vh" bg="#2b2d42" rounded="md">
         <Flex
           p={3}
@@ -14,7 +15,6 @@ const ChatRoom = () => {
           minH="90%"
           roundedLeft="md"
           bg="#caf0f8"
-          borderRight="1px solid black"
           className="hide-scrollbar"
           overflowY="scroll"
         >
@@ -82,7 +82,7 @@ const ChatRoom = () => {
             />
           </Flex>
         </Flex>
-        <Flex minW="60%" minH="100%"></Flex>
+        <ChatBox />
       </Flex>
     </Flex>
   );

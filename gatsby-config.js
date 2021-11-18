@@ -6,6 +6,9 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-styled-components`,
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
 

@@ -2,6 +2,7 @@ import React from "react";
 import { Flex, chakra, Input } from "@chakra-ui/react";
 import MessagePreview from "../components/messagePreview";
 import ChatBox from "../components/chatBox";
+import "../components/layout.css";
 
 const ChatRoom = () => {
   // TODO: FIX FONTS

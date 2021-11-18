@@ -6,10 +6,24 @@ const MessagePreview: React.FC<{
   message: string;
   senderAvatar?: string;
   timeSent: Date;
-}> = ({ senderName, message, senderAvatar, timeSent }) => {
+  handleOnClick: React.Dispatch<
+    React.SetStateAction<{
+      senderName: string;
+      senderStatus: "Online" | "Busy" | "Typing..." | "Offline" | "";
+      senderAvatar: string | null;
+    }>
+  >;
+}> = ({ senderName, message, senderAvatar, timeSent, handleOnClick }) => {
   return (
     <Flex
       cursor="pointer"
+      onClick={() => {
+        handleOnClick({
+          senderName: senderName,
+          senderStatus: "Online",
+          senderAvatar: senderAvatar,
+        });
+      }}
       bg="#90e0ef"
       direction="column"
       w="98%"

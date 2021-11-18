@@ -5,7 +5,7 @@ import "../components/layout.css";
 const IndexPage: React.FC = () => (
   <Layout>
     <Flex maxW="100vw" minH="100vh" bg="#011627">
-      21321321321321321HEllo world
+      Under construction
     </Flex>
   </Layout>
 );
